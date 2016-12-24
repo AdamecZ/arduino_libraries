@@ -61,11 +61,12 @@ String Fotorezystor::PoziomCiemnosciGraf(){
     }
 String Fotorezystor::PoziomCiemnosciGraf(byte poziom){
       byte znak;
+      int temp=poziom/16; 	
       String text="";
       for (byte l=0;l<=16;l++){
         
        
-       if(l<=poziom){
+       if(l<=temp){
         znak=0xFF;
        }
        else{
