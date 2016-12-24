@@ -27,54 +27,54 @@ float Fotorezystor::Odczyt(){
 boolean Fotorezystor::SprawdzajCiemnosc( uint8_t poziomCiemnosci){
       this->ciemnosc= poziomCiemnosci;
       if((this->Odczyt()) > this->ciemnosc ){    
-        Serial.println("high");
+        
         this->StanCiemnosci=true; 
       }
       else{
         this->StanCiemnosci=false;
-        Serial.println("low"); 
+         
       }
       return this->StanCiemnosci;  
     }
     
 float Fotorezystor::PrzeliczNaVolt(){
       float v=this->Odczyt()*5/255;
-      Serial.println(v);
+      
       return v;
     }
-uint8_t Fotorezystor::PoziomCiemnosciGraf(){
+// prezrobienie poziomu z ADC na wyswielacz LCD 16*X
+String Fotorezystor::PoziomCiemnosciGraf(){
       byte znak;
+      String text="";
       int poziom=this->Odczyt()/16;
       for (byte l=0;l<=16;l++){
-        //Serial.print((char)221);
-       // Serial.print("|");
        if(l<=poziom){
         znak=0xFF;
        }
        else{
         znak=32;
        }
-       lcd.print((char)znak);
+       text=text+((char)znak);
       }
-      //Serial.println(" ");
-      return poziom;
-    }
-uint8_t Fotorezystor::PoziomCiemnosciGraf(byte poziom){
-      byte znak;
       
+      return text;
+    }
+String Fotorezystor::PoziomCiemnosciGraf(byte poziom){
+      byte znak;
+      String text="";
       for (byte l=0;l<=16;l++){
-        //Serial.print((char)221);
-       // Serial.print("|");
+        
+       
        if(l<=poziom){
         znak=0xFF;
        }
        else{
         znak=32;
        }
-       lcd.print((char)znak);
+       text=text+(char)znak;
       }
-      //Serial.println(" ");
-      return poziom;
+      
+      return text;
     }
     
 

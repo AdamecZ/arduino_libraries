@@ -25,8 +25,8 @@ class Fotorezystor{
     boolean SprawdzajCiemnosc( uint8_t poziomCiemnosci);
     
     float PrzeliczNaVolt();
-    uint8_t PoziomCiemnosciGraf();
-    uint8_t PoziomCiemnosciGraf(byte poziom);
+    String PoziomCiemnosciGraf();
+    String PoziomCiemnosciGraf(byte poziom);
     
 };
 
