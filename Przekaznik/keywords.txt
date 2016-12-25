@@ -1,0 +1,18 @@
+#######################################
+# Syntax Coloring Map Przekaznik
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Przekaznik	KEYWORD1	
+
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+Init	                KEYWORD2
+OnPrzekaznik	        KEYWORD2
+OffTimePrzekaznik	KEYWORD2
+#######################################
